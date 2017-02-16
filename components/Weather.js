@@ -43,7 +43,7 @@ export default class Weather extends Component {
     return (
       <div className={className}>
         {`${temperature}`.split('.')[0]}°F<br/>
-        {precipProbability * 100}%
+        {`${precipProbability * 100}`.split('.')[0]}%
       </div>
     )
   }
