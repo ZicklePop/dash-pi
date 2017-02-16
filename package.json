@@ -1,0 +1,46 @@
+{
+  "name": "dash-pi",
+  "version": "1.0.0",
+  "description": "JakeBoard Pi Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "node server.js",
+    "prestart": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:updateSnapshots": "jest --updateSnapshots"
+  },
+  "author": "Jake Bilbrey",
+  "license": "🤗",
+  "dependencies": {
+    "good": "^7.1.0",
+    "good-console": "^6.4.0",
+    "good-squeeze": "^5.0.1",
+    "hapi": "^16.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "joi": "^10.2.1",
+    "next": "^2.0.0-beta.25",
+    "node-fetch": "^1.6.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
+    "eslint": "^3.15.0",
+    "eslint-plugin-react": "^6.9.0",
+    "jest": "^18.1.0",
+    "lodash": "^4.17.4",
+    "react-test-renderer": "^15.4.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules",
+      "/.next/"
+    ]
+  }
+}
