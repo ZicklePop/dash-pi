@@ -6,7 +6,6 @@
   "scripts": {
     "build": "next build",
     "dev": "node server.js",
-    "prestart": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

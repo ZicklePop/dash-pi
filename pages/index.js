@@ -28,7 +28,7 @@ export default class Index extends Component {
           <Clock className={smallBox} />
           <Weather className={smallBox} />
         </div>
-        <Gif className={`${bigBox}`} />
+        <Gif className={bigBox} />
       </div>
     )
   }
