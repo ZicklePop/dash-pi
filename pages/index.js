@@ -5,7 +5,7 @@ import Weather from '../components/Weather'
 import Gif from '../components/Gif'
 
 const smallBox = 'fl f1 fw3 w-100 h-50 pa2 inline-flex items-center justify-center tc'
-const bigBox = 'fl f2 fw3 w-100 w-two-thirds-ns pa2 h-100 inline-flex items-center justify-center'
+const bigBox = 'fl f2 fw3 w-100 w-two-thirds-ns h-100 inline-flex items-center justify-center'
 
 export default class Index extends Component {
   constructor(props) {
