@@ -6,12 +6,13 @@
   "scripts": {
     "build": "next build",
     "dev": "node server.js",
-    "start": "NODE_ENV=production node server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "prestart": "next build",
+    "start": "NODE_ENV=production node server.js",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "test:updateSnapshots": "jest --updateSnapshots"
+    "test:updateSnapshots": "jest --updateSnapshots",
+    "test:watch": "jest --watchAll"
   },
   "author": "Jake Bilbrey",
   "license": "🤗",
@@ -21,8 +22,8 @@
     "good-squeeze": "^5.0.1",
     "hapi": "^16.1.0",
     "isomorphic-fetch": "^2.2.1",
-    "joi": "^10.2.1",
-    "next": "^2.0.0-beta.25",
+    "lodash": "^4.17.4",
+    "next": "^2.0.0-beta.29",
     "node-fetch": "^1.6.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
@@ -33,7 +34,6 @@
     "eslint": "^3.15.0",
     "eslint-plugin-react": "^6.9.0",
     "jest": "^18.1.0",
-    "lodash": "^4.17.4",
     "react-test-renderer": "^15.4.2"
   },
   "jest": {
