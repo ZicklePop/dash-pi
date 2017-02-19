@@ -18,10 +18,8 @@ export default function dateAsObject(date) {
 
   let hours = date.getHours() % 12
   hours = hours ? hours : 12
-  const amPm = hours >= 12 ? 'pm' : 'am'
 
   return {
-    amPm,
     day: date.getDate(),
     hours,
     minutes: ('0' + date.getMinutes()).slice(-2),

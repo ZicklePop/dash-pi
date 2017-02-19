@@ -2,7 +2,6 @@ import dateAsObject from '../dateAsObject'
 
 const mockDateEpoc = new Date('Jan 19 1990')
 const mockDateObj = {
-  amPm: 'pm',
   day: 19,
   hours: 12,
   minutes: '00',

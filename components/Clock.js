@@ -21,12 +21,12 @@ export default class Clock extends Component {
 
   render() {
     const { className } = this.props
-    const { month, day, hours, minutes, amPm } = this.state.date
+    const { month, day, hours, minutes } = this.state.date
 
     return (
       <div className={className}>
         {`${month} ${day}`}<br/>
-        {hours}:{minutes}{amPm}
+        {hours}:{minutes}
       </div>
     )
   }
