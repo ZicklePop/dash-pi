@@ -40,6 +40,7 @@ export default class Index extends Component {
             body {
               background-color: black;
               cursor: none;
+              user-select: none;
             }
           `}</style>
         </Head>
