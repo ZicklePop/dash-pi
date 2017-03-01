@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Head from 'next/head'
 import Clock from '../components/Clock'
 import Gif from '../components/Gif'
+import HardRefresh from '../components/HardRefresh'
 import Radar from '../components/Radar'
 import Text from '../components/Text'
 import Weather from '../components/Weather'
@@ -44,6 +45,7 @@ export default class Index extends Component {
             }
           `}</style>
         </Head>
+        <HardRefresh />
         <div className={'fl w-100 w-third-ns h-100'}>
           <Clock className={smallBox} />
           <Weather className={smallBox} />
