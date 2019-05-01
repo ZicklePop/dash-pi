@@ -31,11 +31,11 @@ export default class Index extends Component {
     return (
       <div
         className={'ma0 center bg-black near-white'}
-        style={{ width: 800, height: 480 }}
+        style={{ width: 800, height: 480, cursor: 'none', userSelect: 'none' }}
         onContextMenu={this.handleContextMenu}
       >
         <Head>
-          <title>{'JakeBoard Pi'}</title>
+          <title>{'MelBoard Pi'}</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='stylesheet' href='/static/tachyons.min.css' />
           <style global jsx>{`
