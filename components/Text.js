@@ -5,7 +5,7 @@ export default class Text extends Component {
   constructor (props) {
     super(props)
     this.state = texts[Math.floor(Math.random() * texts.length)]
-    this.handleClick = this.handleClick.bind()
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick () {

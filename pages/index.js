@@ -14,7 +14,7 @@ export default class Index extends Component {
   constructor (props) {
     super(props)
     this.state = { bigIndex: 0 }
-    this.handleContextMenu = this.handleContextMenu.bind()
+    this.handleContextMenu = this.handleContextMenu.bind(this)
   }
 
   handleContextMenu (e) {
@@ -30,7 +30,7 @@ export default class Index extends Component {
 
     return (
       <div
-        className={'ma0 center near-white'}
+        className={'ma0 center bg-black near-white'}
         style={{ width: 800, height: 480 }}
         onContextMenu={this.handleContextMenu}
       >
