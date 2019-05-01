@@ -3,15 +3,16 @@ import React, { Component } from 'react'
 const GIF_API = '/api/gif'
 
 export default class Gif extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       url: 'http://myhot.pics/?format=random.gif',
-      keywords: '',
+      keywords: ''
     }
+    this.interval = null
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.fetchGif()
 
     this.interval = setInterval(() => {
@@ -19,13 +20,11 @@ export default class Gif extends Component {
     }, 60000)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     clearInterval(this.interval)
   }
 
-  interval = null
-
-  fetchGif() {
+  fetchGif () {
     fetch(GIF_API)
       .then((res) => {
         return res.json()
@@ -35,7 +34,7 @@ export default class Gif extends Component {
       })
   }
 
-  render() {
+  render () {
     const { className } = this.props
     const { url } = this.state
 

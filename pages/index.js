@@ -11,33 +11,34 @@ const smallBox = 'fl f1 fw3 w-100 h-50 pa2 inline-flex items-center justify-cent
 const bigBox = 'fl w-100 w-two-thirds-ns h-100 inline-flex items-center justify-center'
 
 export default class Index extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = { bigIndex: 0 }
+    this.handleContextMenu = this.handleContextMenu.bind()
   }
 
-  handleContextMenu = (e) => {
+  handleContextMenu (e) {
     e.preventDefault()
     const currentBigIndex = this.state.bigIndex
     this.setState({
-      bigIndex: currentBigIndex === 2 ? 0 : currentBigIndex + 1,
+      bigIndex: currentBigIndex === 2 ? 0 : currentBigIndex + 1
     })
   }
 
-  render() {
+  render () {
     const { bigIndex } = this.state
 
     return (
       <div
         className={'ma0 center near-white'}
-        style={{ width: 800, height: 480}}
+        style={{ width: 800, height: 480 }}
         onContextMenu={this.handleContextMenu}
       >
         <Head>
           <title>{'JakeBoard Pi'}</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='stylesheet' href='/static/tachyons.min.css' />
-          <style jsx>{`
+          <style global jsx>{`
             body {
               background-color: black;
               cursor: none;

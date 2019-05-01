@@ -1,27 +1,26 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 export default class HardRefresh extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
+    this.interval = null
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.interval = setInterval(() => {
       this.reloadPage()
     }, 10800000)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     clearInterval(this.interval)
   }
 
-  interval = null
-
-  reloadPage() {
+  reloadPage () {
     window.location = '/'
   }
 
-  render() {
+  render () {
     return null
   }
 }

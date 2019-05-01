@@ -8,7 +8,7 @@ const darkSky = require('./methods/darkSky')
 const myHotPics = require('./methods/myHotPics')
 const nextWrapper = require('./utils/nextWrapper')
 
-const pathWrapper = nextWrapper.pathWrapper
+// const pathWrapper = nextWrapper.pathWrapper
 const defaultHandlerWrapper = nextWrapper.defaultHandlerWrapper
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })

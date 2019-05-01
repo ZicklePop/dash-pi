@@ -1,45 +1,49 @@
 {
   "name": "dash-pi",
   "version": "1.0.0",
-  "description": "JakeBoard Pi Dashboard",
+  "description": "MelBoard Pi Dashboard",
   "main": "server.js",
   "scripts": {
     "build": "next build",
     "dev": "node server.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "standard",
     "prestart": "next build",
     "start": "NODE_ENV=production node server.js",
-    "test": "jest",
-    "test:updateSnapshots": "jest --updateSnapshots",
-    "test:watch": "jest --watchAll"
+    "test": "jest"
   },
-  "author": "Jake Bilbrey",
+  "author": "Melanie Bilbrey",
   "license": "🤗",
   "dependencies": {
-    "good": "^7.1.0",
-    "good-console": "^6.4.0",
-    "good-squeeze": "^5.0.1",
+    "@hapi/good-console": "^8.1.0",
     "hapi": "^16.1.0",
+    "good": "^8.1.2",
+    "good-squeeze": "^5.0.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
-    "next": "^2.0.0-beta.29",
-    "node-fetch": "^1.6.3",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "next": "^8.1.0",
+    "node-fetch": "^2.5.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^18.0.0",
-    "eslint": "^3.15.0",
-    "eslint-plugin-react": "^6.9.0",
-    "jest": "^18.1.0",
-    "react-test-renderer": "^15.4.2"
+    "jest": "^24.7.1",
+    "react-test-renderer": "^16.8.6",
+    "standard": "^12.0.1"
   },
   "jest": {
     "testPathIgnorePatterns": [
       "/node_modules",
       "/.next/"
+    ]
+  },
+  "standard": {
+    "globals": [
+      "React",
+      "describe",
+      "expect",
+      "fetch",
+      "it"
     ]
   }
 }

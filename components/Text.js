@@ -2,16 +2,17 @@ import React, { Component } from 'react'
 import texts from '../constants/texts'
 
 export default class Text extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = texts[Math.floor(Math.random() * texts.length)]
+    this.handleClick = this.handleClick.bind()
   }
 
-  handleClick = () => {
+  handleClick () {
     this.setState(texts[Math.floor(Math.random() * texts.length)])
   }
 
-  render() {
+  render () {
     const { className } = this.props
     const { style, text } = this.state
 

@@ -5,7 +5,7 @@ const texts = [
       color: '#FFFFFF',
       fontSize: '12rem'
     },
-    text: 'BRB',
+    text: 'BRB'
   },
   {
     style: {
@@ -13,8 +13,8 @@ const texts = [
       color: '#FFFFFF',
       fontSize: '12rem'
     },
-    text: 'DND',
-  },
+    text: 'DND'
+  }
 ]
 
 export default texts

@@ -1,7 +1,4 @@
 {
-  "presets": [
-    "es2015",
-    "next/babel",
-    "react"
-  ]
+  "presets": ["next/babel"],
+  "plugins": []
 }

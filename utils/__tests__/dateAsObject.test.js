@@ -5,7 +5,7 @@ const mockDateObj = {
   day: 19,
   hours: 12,
   minutes: '00',
-  month: 'Jan',
+  month: 'Jan'
 }
 
 describe('dateAsObject util', () => {
