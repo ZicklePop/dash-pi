@@ -6,7 +6,7 @@ export default class Gif extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      url: 'http://myhot.pics/?format=random.gif',
+      url: 'https://myhot.pics/random.gif',
       keywords: ''
     }
     this.interval = null

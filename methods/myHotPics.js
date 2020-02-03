@@ -2,7 +2,7 @@
 
 const shuffle = require('lodash/shuffle')
 const fetch = require('node-fetch')
-const MY_HOT_PICS = 'http://myhot.pics/?format=json'
+const MY_HOT_PICS = 'http://myhot.pics/api/gifs'
 
 module.exports = (request, reply) => {
   fetch(MY_HOT_PICS)
