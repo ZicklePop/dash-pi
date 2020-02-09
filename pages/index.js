@@ -10,7 +10,7 @@ const cx = {
   main: 'ma0 center bg-black near-white sans-serif',
   smallBox: 'fl f1 fw3 w-100 h-50 pa2 inline-flex items-center justify-center tc',
   smallContainer: 'fl w-100 w-third-ns h-100',
-  bigBox: 'fl w-100 w-two-thirds-ns h-100 inline-flex items-center justify-center',
+  bigBox: 'fl w-100 w-two-thirds-ns h-100 inline-flex items-center justify-center'
 }
 
 const s = {

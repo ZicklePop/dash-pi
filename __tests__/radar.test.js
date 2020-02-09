@@ -9,7 +9,7 @@ describe('component - Radar', () => {
     expect(tree).toMatchSnapshot()
   })
   it('should render with props', () => {
-    const component = renderer.create(<Radar className={'dn'} />)
+    const component = renderer.create(<Radar className='dn' />)
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })

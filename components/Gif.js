@@ -11,7 +11,7 @@ const Gif = ({ className }) => {
 
   const fetchGif = () => fetch(GIF_API)
     .then((res) => res.json())
-    .then((json) => setUrl(get(json,'url', DEFAULT_GIF)))
+    .then((json) => setUrl(get(json, 'url', DEFAULT_GIF)))
 
   useEffect(() => {
     const interval = setInterval(() => {

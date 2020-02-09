@@ -21,11 +21,11 @@ const TEXTS = [
 ]
 
 const Text = ({ className }) => {
-  const [ index, setIndex ] = useState(0)
+  const [index, setIndex] = useState(0)
   const { text, style } = TEXTS[index]
 
   const handleClick = () => (
-    setIndex(index === TEXTS.length-1 ? 0 : index + 1)
+    setIndex(index === TEXTS.length - 1 ? 0 : index + 1)
   )
 
   return (

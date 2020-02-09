@@ -9,7 +9,7 @@ describe('component - Text', () => {
     expect(tree).toMatchSnapshot()
   })
   it('should render with props', () => {
-    const component = renderer.create(<Text className={'dn'} />)
+    const component = renderer.create(<Text className='dn' />)
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
