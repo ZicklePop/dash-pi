@@ -1,49 +1,40 @@
 {
   "name": "dash-pi",
-  "version": "1.0.0",
-  "description": "MelBoard Pi Dashboard",
   "main": "server.js",
+  "version": "0.0.2",
+  "license": "Unlicense",
   "scripts": {
+    "dev": "next",
+    "start": "next start",
     "build": "next build",
-    "dev": "node server.js",
-    "lint": "standard",
-    "prestart": "next build",
-    "start": "NODE_ENV=production node server.js",
-    "test": "jest"
+    "next": "next",
+    "test": "jest",
+    "lint": "standard"
   },
-  "author": "Melanie Bilbrey",
-  "license": "🤗",
   "dependencies": {
-    "@hapi/good-console": "^8.1.0",
-    "hapi": "^16.1.0",
-    "good": "^8.1.2",
-    "good-squeeze": "^5.0.1",
-    "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.4",
-    "next": "^8.1.0",
-    "node-fetch": "^2.5.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.2.1",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "swr": "^0.1.16",
+    "tachyons": "^4.11.1"
   },
   "devDependencies": {
-    "jest": "^24.7.1",
-    "react-test-renderer": "^16.8.6",
-    "standard": "^12.0.1"
+    "jest": "25.1.0",
+    "react-test-renderer": "^16.12.0",
+    "standard": "^14.3.1"
   },
   "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
     "testPathIgnorePatterns": [
-      "/node_modules",
-      "/.next/"
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
     ]
   },
   "standard": {
-    "globals": [
-      "React",
-      "describe",
-      "expect",
-      "fetch",
-      "it"
-    ]
+    "env": "jest"
   }
 }

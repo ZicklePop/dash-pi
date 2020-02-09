@@ -1,4 +1,4 @@
-import dateAsObject from '../dateAsObject'
+import dateAsObject from '../utils/dateAsObject'
 
 const mockDateEpoc = new Date('Jan 19 1990')
 const mockDateObj = {

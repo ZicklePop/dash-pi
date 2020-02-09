@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import fetch from 'isomorphic-fetch'
 
 const GIF_API = '/api/gif'
 
