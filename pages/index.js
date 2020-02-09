@@ -54,7 +54,7 @@ class Index extends Component {
               user-select: none;
             }
           `}
-          </style>
+        </style>
       </div>
     )
   }
