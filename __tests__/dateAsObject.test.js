@@ -8,7 +8,7 @@ const mockDateObj = {
   month: 'Jan'
 }
 
-describe('dateAsObject util', () => {
+describe('util - dateAsObject', () => {
   it('returns null when no date passed in', () => {
     expect(dateAsObject()).toBeNull()
   })

@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
-const texts = [
+const TEXTS = [
   {
     style: {
       backgroundColor: '#00AEFF',
@@ -19,29 +20,31 @@ const texts = [
   }
 ]
 
-export default class Text extends Component {
-  constructor (props) {
-    super(props)
-    this.state = texts[Math.floor(Math.random() * texts.length)]
-    this.handleClick = this.handleClick.bind(this)
-  }
+const Text = ({ className }) => {
+  const [ index, setIndex ] = useState(0)
+  const { text, style } = TEXTS[index]
 
-  handleClick () {
-    this.setState(texts[Math.floor(Math.random() * texts.length)])
-  }
+  const handleClick = () => (
+    setIndex(index === TEXTS.length-1 ? 0 : index + 1)
+  )
 
-  render () {
-    const { className } = this.props
-    const { style, text } = this.state
-
-    return (
-      <div
-        className={`${className} b tc f1`}
-        style={style}
-        onClick={this.handleClick}
-      >
-        {text}
-      </div>
-    )
-  }
+  return (
+    <div
+      className={`${className} b tc f1`}
+      style={style}
+      onClick={handleClick}
+    >
+      {text}
+    </div>
+  )
 }
+
+Text.propTypes = {
+  className: PropTypes.string
+}
+
+Text.defaultProps = {
+  className: ''
+}
+
+export default Text

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component - Radar should render 1`] = `
+<div
+  className=" w-100"
+>
+  <iframe
+    className="h-100"
+    frameBorder="0"
+    src="https://maps.darksky.net/@radar,37.780,-122.419,11?embed=true&timeControl=false&fieldControl=false&defaultField=radar"
+    width="100%"
+  />
+</div>
+`;
+
+exports[`component - Radar should render with props 1`] = `
+<div
+  className="dn w-100"
+>
+  <iframe
+    className="h-100"
+    frameBorder="0"
+    src="https://maps.darksky.net/@radar,37.780,-122.419,11?embed=true&timeControl=false&fieldControl=false&defaultField=radar"
+    width="100%"
+  />
+</div>
+`;

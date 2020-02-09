@@ -1,32 +1,32 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import dateAsObject from '../utils/dateAsObject'
 
-export default class Clock extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { date: dateAsObject(new Date()) }
-    this.interval = null
-  }
+const Clock = ({ className }) => {
+  const [date, setDate] = useState(dateAsObject(new Date()))
+  const { month, day, hours, minutes } = date
 
-  componentDidMount () {
-    this.interval = setInterval(() => {
-      this.setState({ date: dateAsObject(new Date()) })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDate(dateAsObject(new Date()))
     }, 1000)
-  }
+    return () => clearInterval(interval)
+  }, [])
 
-  componentWillUnmount () {
-    clearInterval(this.interval)
-  }
-
-  render () {
-    const { className } = this.props
-    const { month, day, hours, minutes } = this.state.date
-
-    return (
-      <div className={className}>
-        {`${month} ${day}`}<br />
-        {hours}:{minutes}
-      </div>
-    )
-  }
+  return (
+    <div className={className}>
+      {`${month} ${day}`}<br />
+      {hours}:{minutes}
+    </div>
+  )
 }
+
+Clock.propTypes = {
+  className: PropTypes.string
+}
+
+Clock.defaultProps = {
+  className: ''
+}
+
+export default Clock

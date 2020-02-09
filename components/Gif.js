@@ -1,54 +1,41 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
+import get from 'lodash/get'
 
 const GIF_API = '/api/gif'
+const DEFAULT_GIF = 'https://myhot.pics/random.gif'
 
-export default class Gif extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      url: 'https://myhot.pics/random.gif',
-      keywords: ''
-    }
-    this.interval = null
-  }
+const Gif = ({ className }) => {
+  const [url, setUrl] = useState(DEFAULT_GIF)
 
-  componentDidMount () {
-    this.fetchGif()
+  const fetchGif = () => fetch(GIF_API)
+    .then((res) => res.json())
+    .then((json) => setUrl(get(json,'url', DEFAULT_GIF)))
 
-    this.interval = setInterval(() => {
-      this.fetchGif()
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchGif()
     }, 60000)
-  }
+    return () => clearInterval(interval)
+  }, [])
 
-  componentWillUnmount () {
-    clearInterval(this.interval)
-  }
-
-  fetchGif () {
-    fetch(GIF_API)
-      .then((res) => {
-        return res.json()
-      })
-      .then((json) => {
-        this.setState({ ...json })
-      })
-  }
-
-  render () {
-    const { className } = this.props
-    const { url } = this.state
-
-    return (
-      <div
-        className={className}
-        style={{
-          backgroundPosition: '50% 50%',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundImage: `url(${url})`
-        }}
-      />
-    )
-  }
+  return (
+    <div
+      className={`${className} cover bg-center`}
+      style={{
+        backgroundImage: `url(${url})`
+      }}
+    />
+  )
 }
+
+Gif.propTypes = {
+  className: PropTypes.string
+}
+
+Gif.defaultProps = {
+  className: ''
+}
+
+export default Gif

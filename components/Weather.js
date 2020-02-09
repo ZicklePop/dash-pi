@@ -1,49 +1,41 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
+import get from 'lodash/get'
 
 const WEATHER_API = '/api/weather'
 
-export default class Weather extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      temperature: 0,
-      precipProbability: 0
-    }
-    this.interval = null
-  }
+const Weather = ({ className }) => {
+  const [data, setData] = useState({})
+  const temperature = get(data, 'temperature', 0)
+  const precipProbability = get(data, 'precipProbability', 0)
 
-  componentDidMount () {
-    this.fetchWeather()
+  const fetchWeather = () => fetch(WEATHER_API)
+    .then((res) => res.json())
+    .then((json) => setData(json))
 
-    this.interval = setInterval(() => {
-      this.fetchWeather()
+  useEffect(() => {
+    fetchWeather()
+    const interval = setInterval(() => {
+      fetchWeather()
     }, 300000)
-  }
+    return () => clearInterval(interval)
+  }, [])
 
-  componentWillUnmount () {
-    clearInterval(this.interval)
-  }
-
-  fetchWeather () {
-    fetch(WEATHER_API)
-      .then((res) => {
-        return res.json()
-      })
-      .then((json) => {
-        this.setState({ ...json })
-      })
-  }
-
-  render () {
-    const { className } = this.props
-    const { temperature, precipProbability } = this.state
-
-    return (
-      <div className={className}>
-        {`${temperature}`.split('.')[0]}°F<br />
-        {`${precipProbability * 100}`.split('.')[0]}%
-      </div>
-    )
-  }
+  return (
+    <div className={className}>
+      {`${temperature}`.split('.')[0]}°F<br />
+      {`${precipProbability * 100}`.split('.')[0]}%
+    </div>
+  )
 }
+
+Weather.propTypes = {
+  className: PropTypes.string
+}
+
+Weather.defaultProps = {
+  className: ''
+}
+
+export default Weather

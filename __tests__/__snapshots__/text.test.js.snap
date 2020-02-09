@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component - Text should render 1`] = `
+<div
+  className=" b tc f1"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#00AEFF",
+      "color": "#FFFFFF",
+      "fontSize": "12rem",
+    }
+  }
+>
+  BRB
+</div>
+`;
+
+exports[`component - Text should render with props 1`] = `
+<div
+  className="dn b tc f1"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#00AEFF",
+      "color": "#FFFFFF",
+      "fontSize": "12rem",
+    }
+  }
+>
+  BRB
+</div>
+`;

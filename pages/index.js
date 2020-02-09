@@ -1,63 +1,64 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Clock from '../components/clock'
+import Gif from '../components/gif'
+import Radar from '../components/radar'
+import Text from '../components/text'
+import Weather from '../components/weather'
 
-import Clock from '../components/Clock'
-import Gif from '../components/Gif'
-import HardRefresh from '../components/HardRefresh'
-import Radar from '../components/Radar'
-import Text from '../components/Text'
-import Weather from '../components/Weather'
+const cx = {
+  main: 'ma0 center bg-black near-white sans-serif',
+  smallBox: 'fl f1 fw3 w-100 h-50 pa2 inline-flex items-center justify-center tc',
+  smallContainer: 'fl w-100 w-third-ns h-100',
+  bigBox: 'fl w-100 w-two-thirds-ns h-100 inline-flex items-center justify-center',
+}
 
-const smallBox = 'fl f1 fw3 w-100 h-50 pa2 inline-flex items-center justify-center tc'
-const bigBox = 'fl w-100 w-two-thirds-ns h-100 inline-flex items-center justify-center'
+const s = {
+  main: { width: 800, height: 480 }
+}
 
-class Index extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { bigIndex: 0 }
-    this.handleContextMenu = this.handleContextMenu.bind(this)
-  }
+const Index = () => {
+  const [bigIndex, setBigIndex] = useState(0)
 
-  handleContextMenu (e) {
+  const handleContextMenu = e => {
     e.preventDefault()
-    const currentBigIndex = this.state.bigIndex
-    this.setState({
-      bigIndex: currentBigIndex === 2 ? 0 : currentBigIndex + 1
-    })
+    setBigIndex(bigIndex === 2 ? 0 : bigIndex + 1)
   }
 
-  render () {
-    const { bigIndex } = this.state
+  useEffect(() => {
+    const interval = setInterval(() => {
+      window.location = '/'
+    }, 10800000)
+    return () => clearInterval(interval)
+  }, [])
 
-    return (
-      <div
-        className='ma0 center bg-black near-white sans-serif'
-        style={{ width: 800, height: 480, cursor: 'none', userSelect: 'none' }}
-        onContextMenu={this.handleContextMenu}
-      >
-        <Head>
-          <title>MelBoard Pi</title>
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
-        </Head>
-        <HardRefresh />
-        <div className='fl w-100 w-third-ns h-100'>
-          <Clock className={smallBox} />
-          <Weather className={smallBox} />
-        </div>
-        {bigIndex === 0 && <Gif className={bigBox} />}
-        {bigIndex === 1 && <Radar className={bigBox} />}
-        {bigIndex === 2 && <Text className={bigBox} />}
-        <style global jsx>{`
-            body {
-              background-color: black;
-              cursor: none;
-              user-select: none;
-            }
-          `}
-        </style>
+  return (
+    <div
+      className={cx.main}
+      style={s.main}
+      onContextMenu={handleContextMenu}
+    >
+      <Head>
+        <title>MelBoard Pi</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+      </Head>
+      <div className={cx.smallContainer}>
+        <Clock className={cx.smallBox} />
+        <Weather className={cx.smallBox} />
       </div>
-    )
-  }
+      {bigIndex === 0 && <Gif className={cx.bigBox} />}
+      {bigIndex === 1 && <Radar className={cx.bigBox} />}
+      {bigIndex === 2 && <Text className={cx.bigBox} />}
+      <style global jsx>{`
+          body {
+            background-color: black;
+            cursor: none;
+            user-select: none;
+          }
+        `}
+      </style>
+    </div>
+  )
 }
 
 export default Index
