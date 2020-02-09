@@ -31,22 +31,13 @@ class Index extends Component {
 
     return (
       <div
-        className='ma0 center bg-black near-white'
+        className='ma0 center bg-black near-white sans-serif'
         style={{ width: 800, height: 480, cursor: 'none', userSelect: 'none' }}
         onContextMenu={this.handleContextMenu}
       >
         <Head>
           <title>MelBoard Pi</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <link rel='stylesheet' href='/static/tachyons.min.css' />
-          <style global jsx>{`
-            body {
-              background-color: black;
-              cursor: none;
-              user-select: none;
-            }
-          `}
-          </style>
         </Head>
         <HardRefresh />
         <div className='fl w-100 w-third-ns h-100'>
@@ -56,6 +47,14 @@ class Index extends Component {
         {bigIndex === 0 && <Gif className={bigBox} />}
         {bigIndex === 1 && <Radar className={bigBox} />}
         {bigIndex === 2 && <Text className={bigBox} />}
+        <style global jsx>{`
+            body {
+              background-color: black;
+              cursor: none;
+              user-select: none;
+            }
+          `}
+          </style>
       </div>
     )
   }

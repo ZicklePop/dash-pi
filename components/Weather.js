@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-unfetch'
 
 const WEATHER_API = '/api/weather'
 
