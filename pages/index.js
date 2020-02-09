@@ -18,11 +18,17 @@ const s = {
 }
 
 const Index = () => {
-  const [bigIndex, setBigIndex] = useState(0)
+  const [index, setIndex] = useState(0)
+
+  const boxes = [
+    <Gif key='box-gif' className={cx.bigBox} />,
+    <Radar key='box-radar' className={cx.bigBox} />,
+    <Text key='box-text' className={cx.bigBox} />
+  ]
 
   const handleContextMenu = e => {
     e.preventDefault()
-    setBigIndex(bigIndex === 2 ? 0 : bigIndex + 1)
+    setIndex(index === boxes.length - 1 ? 0 : index + 1)
   }
 
   useEffect(() => {
@@ -46,9 +52,7 @@ const Index = () => {
         <Clock className={cx.smallBox} />
         <Weather className={cx.smallBox} />
       </div>
-      {bigIndex === 0 && <Gif className={cx.bigBox} />}
-      {bigIndex === 1 && <Radar className={cx.bigBox} />}
-      {bigIndex === 2 && <Text className={cx.bigBox} />}
+      {boxes[index]}
       <style global jsx>{`
           body {
             background-color: black;
