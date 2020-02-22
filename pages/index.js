@@ -44,7 +44,7 @@ const Index = () => {
       style={s.main}
       onContextMenu={handleContextMenu}
     >
-      <Head>
+      <Head lang='en'>
         <title>MelBoard Pi</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
