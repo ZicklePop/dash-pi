@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
-import Html from 'next/html'
 import Clock from '../components/clock'
 import Gif from '../components/gif'
 import Radar from '../components/radar'
@@ -40,31 +38,26 @@ const Index = () => {
   }, [])
 
   return (
-    <Html lang='en'>
-      <div
-        className={cx.main}
-        style={s.main}
-        onContextMenu={handleContextMenu}
-      >
-        <Head>
-          <title>MelBoard Pi</title>
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
-        </Head>
-        <div className={cx.smallContainer}>
-          <Clock className={cx.smallBox} />
-          <Weather className={cx.smallBox} />
-        </div>
-        {boxes[index]}
-        <style global jsx>{`
-            body {
-              background-color: black;
-              cursor: none;
-              user-select: none;
-            }
-          `}
-        </style>
+    <div
+      className={cx.main}
+      style={s.main}
+      onContextMenu={handleContextMenu}
+    >
+      <div className={cx.smallContainer}>
+        <Clock className={cx.smallBox} />
+        <Weather className={cx.smallBox} />
       </div>
-    </Html>
+      {boxes[index]}
+      <style global jsx>
+        {`
+          body {
+            background-color: black;
+            cursor: none;
+            user-select: none;
+          }
+        `}
+      </style>
+    </div>
   )
 }
 
