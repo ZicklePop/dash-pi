@@ -1,0 +1,46 @@
+{
+  "name": "dash-pi",
+  "main": "server.js",
+  "version": "0.0.2",
+  "license": "Unlicense",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "dev": "next",
+    "start": "next start",
+    "build": "next build",
+    "next": "next",
+    "now": "vercel dev",
+    "test": "jest",
+    "lint": "standard"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.3.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "swr": "^0.1.18",
+    "tachyons": "^4.11.1"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "react-test-renderer": "^16.13.0",
+    "standard": "^14.3.3",
+    "vercel": "^19.1.1"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "standard": {
+    "env": "jest"
+  }
+}
