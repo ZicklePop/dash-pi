@@ -12,6 +12,7 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <title>MelBoard Pi</title>
+          <meta name='description' content={'melanie\'s dashboard for raspberry pi'} />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
         </Head>
         <body>
