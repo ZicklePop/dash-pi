@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
 const RADAR_EMBED = 'https://maps.darksky.net/@radar,37.780,-122.419,11?embed=true&timeControl=false&fieldControl=false&defaultField=radar'
