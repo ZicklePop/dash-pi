@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import Clock from '../components/clock'
 import Gif from '../components/gif'
 import Radar from '../components/radar'
