@@ -29,8 +29,8 @@
     "vercel": "^20.1.2"
   },
   "resolutions": {
-    "minimist": "^1.2.5",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "object-path": "^0.11.5"
   },
   "jest": {
     "transform": {
